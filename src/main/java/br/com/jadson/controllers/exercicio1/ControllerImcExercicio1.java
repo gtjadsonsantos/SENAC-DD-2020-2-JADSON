@@ -1,6 +1,6 @@
-package br.com.jadson.controllers;
+package br.com.jadson.controllers.exercicio1;
 
-import br.com.jadson.models.vo.ImcExercicio1;
+import br.com.jadson.models.vo.exercicio1.ImcExercicio1;
 
 public class ControllerImcExercicio1 {
     

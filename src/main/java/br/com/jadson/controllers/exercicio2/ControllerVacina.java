@@ -25,10 +25,10 @@ public class ControllerVacina {
         vacinaBO.atualizar(vacinaVO);
     }
 
-    public ArrayList<VacinaVO> buscar(VacinaVO vacinaVO) {
+    public ArrayList<VacinaVO> buscar() {
         VacinaBO vacinaBO = new VacinaBO();
 
-        return vacinaBO.buscar(vacinaVO);
+        return vacinaBO.buscar();
         
     }
 }

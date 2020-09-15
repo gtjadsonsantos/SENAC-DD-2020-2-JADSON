@@ -50,6 +50,8 @@ public class MenuVacina {
         String nomePesquisador = teclado.nextLine();
         System.out.print("Digite nome do pais de origem: ");
         String paisOrigem = teclado.nextLine();
+        System.out.print("Digite o estágio da pesquisa(inicial, testes, aplicação em massa):");
+        String est_pesquisa = teclado.nextLine();
         System.out.print("Digite a data de inicio da pesquiosa(DD/MM/AAAA): ");
         LocalDate dtInicioPesquisa = LocalDate.parse(teclado.nextLine(), dataFormatter);
 
@@ -57,7 +59,7 @@ public class MenuVacina {
         vacina.setNomePesquisador(nomePesquisador);
         vacina.setPaisOrigem(paisOrigem);
         vacina.setDtInicioPesquisa(dtInicioPesquisa);
-
+        vacina.setEst_pesquisa(est_pesquisa);
         controllerVacina.cadastrar(vacina);
     };
 
@@ -75,6 +77,8 @@ public class MenuVacina {
         String nomePesquisador = teclado.nextLine();
         System.out.print("Digite nome do pais de origem: ");
         String paisOrigem = teclado.nextLine();
+        System.out.print("Digite o estágio da pesquisa(inicial, testes, aplicação em massa):");
+        String est_pesquisa = teclado.nextLine();
         System.out.print("Digite a data de inicio da pesquiosa: ");
         LocalDate dtInicioPesquisa = LocalDate.parse(teclado.nextLine(), dataFormatter);
 
@@ -82,6 +86,7 @@ public class MenuVacina {
         vacina.setNomeVacina(nomeVacina);
         vacina.setNomePesquisador(nomePesquisador);
         vacina.setPaisOrigem(paisOrigem);
+        vacina.setEst_pesquisa(est_pesquisa);
         vacina.setDtInicioPesquisa(dtInicioPesquisa);
 
         controllerVacina.atualizar(vacina);
@@ -90,16 +95,11 @@ public class MenuVacina {
 
     public void buscar() {
 
-        VacinaVO vacina = new VacinaVO();
-        Scanner teclado = new Scanner(System.in);
+        
         ControllerVacina controllerVacina = new ControllerVacina();
 
-        System.out.print("Digite o id: ");
-        int id = teclado.nextInt();
 
-        vacina.setId(id);
-
-        ArrayList<VacinaVO> listaVacinaVO = controllerVacina.buscar(vacina);
+        ArrayList<VacinaVO> listaVacinaVO = controllerVacina.buscar();
 
         for (int i = 0; i < listaVacinaVO.size(); i++) {
             System.out.println("VACINAID: " + listaVacinaVO.get(i).getId() + " NOME_VACINDA: "

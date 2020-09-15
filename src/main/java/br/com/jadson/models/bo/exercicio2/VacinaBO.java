@@ -25,9 +25,9 @@ public class VacinaBO {
         vacinaDAO.deletar(vacinaVO);
 	}
 
-	public ArrayList<VacinaVO> buscar(VacinaVO vacinaVO) {
+	public ArrayList<VacinaVO> buscar() {
         VacinaDAO vacinaDAO = new VacinaDAO();
 
-		return vacinaDAO.buscar(vacinaVO);
+		return vacinaDAO.buscar();
 	}
 }

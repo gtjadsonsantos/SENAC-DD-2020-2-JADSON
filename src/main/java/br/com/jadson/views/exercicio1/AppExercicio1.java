@@ -1,4 +1,4 @@
-package br.com.jadson.views;
+package br.com.jadson.views.exercicio1;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import br.com.jadson.models.vo.ImcExercicio1;
-import br.com.jadson.controllers.ControllerImcExercicio1;
+import br.com.jadson.models.vo.exercicio1.ImcExercicio1;
+import br.com.jadson.controllers.exercicio1.ControllerImcExercicio1;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

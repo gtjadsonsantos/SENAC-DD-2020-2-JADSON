@@ -86,14 +86,13 @@ public class VacinaDAO {
 
     }
 
-    public ArrayList<VacinaVO> buscar(VacinaVO vacinaVO) {
+    public ArrayList<VacinaVO> buscar() {
         Connection conn = Banco.getConnection();
         Statement stmt = Banco.getStatement(conn);
         ResultSet resultado = null;
         ArrayList<VacinaVO> listaVacinaVO = new ArrayList<VacinaVO>();
 
-        String query = "SELECT VACINAID,NOME_VACINDA,NOME_PESQUISADOR_RESP,PAIS_ORIGEM,EST_PESQUISA,DT_INICIO_PESQUISA FROM VACINAS WHERE VACINAID="
-                + vacinaVO.getId();
+        String query = "SELECT VACINAID,NOME_VACINDA,NOME_PESQUISADOR_RESP,PAIS_ORIGEM,EST_PESQUISA,DT_INICIO_PESQUISA FROM VACINAS ";
 
         try {
             resultado = stmt.executeQuery(query);

@@ -1,4 +1,4 @@
-package br.com.jadson.models.vo;
+package br.com.jadson.models.vo.exercicio1;
 
 public class ImcExercicio1 {
     private double weight;
