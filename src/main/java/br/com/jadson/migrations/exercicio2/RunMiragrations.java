@@ -2,9 +2,6 @@ package br.com.jadson.migrations.exercicio2;
 
 import java.util.ArrayList;
 
-import br.com.jadson.migrations.exercicio2.Vacina;
-import br.com.jadson.migrations.exercicio2.Pessoa;
-
 public class RunMiragrations {
 
     private ArrayList<Migration> migrations;
@@ -32,6 +29,7 @@ public class RunMiragrations {
 
         listMigrations.add(new Vacina());
         listMigrations.add(new Pessoa());
+        listMigrations.add(new Notas());
 
         miragrations.setMigrations(listMigrations);
         miragrations.start();

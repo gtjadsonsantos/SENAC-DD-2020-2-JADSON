@@ -61,6 +61,8 @@ public class MenuVacina {
         vacina.setDtInicioPesquisa(dtInicioPesquisa);
         vacina.setEst_pesquisa(est_pesquisa);
         controllerVacina.cadastrar(vacina);
+        teclado.close();
+
     };
 
     public void atualizar() {
@@ -90,6 +92,7 @@ public class MenuVacina {
         vacina.setDtInicioPesquisa(dtInicioPesquisa);
 
         controllerVacina.atualizar(vacina);
+        teclado.close();
 
     };
 
@@ -123,6 +126,8 @@ public class MenuVacina {
         vacina.setId(id);
 
         controllerVacina.deletar(vacina);
+        teclado.close();
+
     };
 
     public int exibirOpcoes() {
@@ -141,6 +146,8 @@ public class MenuVacina {
         } catch (Exception e) {
             System.out.println("Digite somente números");
         }
+
+        teclado.close();
 
         return option;
     }

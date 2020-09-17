@@ -53,6 +53,7 @@ public class MenuPessoa {
         } catch (Exception e) {
             System.out.println("Digite somente números");
         }
+        teclado.close();
 
         return option;
     }
@@ -77,6 +78,8 @@ public class MenuPessoa {
         pessoa.setCpf(cpf);
 
         controllerPessoa.cadastrar(pessoa);
+        teclado.close();
+
 
     };
 
@@ -105,6 +108,8 @@ public class MenuPessoa {
         pessoa.setCpf(cpf);
 
         controllerPessoa.atualizar(pessoa);
+        teclado.close();
+
 
     };
 
@@ -125,6 +130,8 @@ public class MenuPessoa {
                     + listPessoas.get(i).getTipo());
 
         }
+        teclado.close();
+
 
     };
 
@@ -140,5 +147,7 @@ public class MenuPessoa {
 
         pessoa.setId(id);
         controllerPessoa.deletar(pessoa);
+        teclado.close();
+
     };
 }

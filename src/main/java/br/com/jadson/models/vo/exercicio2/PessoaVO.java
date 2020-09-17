@@ -6,6 +6,7 @@ public class PessoaVO {
     private char sexo;
     private String cpf;
     private char tipo;
+    private String instituicao;
 
     public PessoaVO() {
         
@@ -49,6 +50,15 @@ public class PessoaVO {
 
     public void setTipo(char tipo) {
         this.tipo = tipo;
+    }
+
+    public String getInstituicao() {
+        return instituicao;
+    }
+
+    public void setInstituicao(String instituicao) {
+        this.instituicao = instituicao;
     };
 
+    
 }

@@ -27,6 +27,8 @@ public class Menu {
         System.out.println(MENU_PESSOA + " - MENU PESSOA");
         System.out.print("Digite a opção: ");
 
+        teclado.close();
+
         return teclado.nextInt();
     }
 }

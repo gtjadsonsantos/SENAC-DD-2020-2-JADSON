@@ -1,24 +1,24 @@
 package br.com.jadson.views.exercicio2;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+
+import br.com.jadson.components.Sidebar;
+
+
 public class HomeScreen extends JFrame implements ActionListener {
+
+    private static final long serialVersionUID = 1L;
     private JPanel panel;
-    private JButton pessoas;
-    private JButton vacinas;
-    private JLabel title;
-    private ActionListener alPessoas;
-    private ActionListener alVacinas;
+    private Sidebar sidebar;
+    private  static final int WIDTH = 800;
+    private  static final int HEIGHT = 600;
 
     public HomeScreen() {
         this.build();
@@ -27,58 +27,32 @@ public class HomeScreen extends JFrame implements ActionListener {
     private void build() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(600, 500);
+        this.setSize(WIDTH, HEIGHT);
         this.setLocationRelativeTo(null);
 
         panel = new JPanel();
+        sidebar = new Sidebar();
+        sidebar.setBounds(0, 0, 200, 600);
+       
 
-        pessoas = new JButton("Pessoas");
-        vacinas = new JButton("Vacinas");
-        title = new JLabel("HOSPITAL");
 
-        pessoas.setBounds(200, 300, 200, 30);
-        vacinas.setBounds(200, 250, 200, 30);
-        title.setBounds(260, 70, 200, 30);
-
-        pessoas.setBorderPainted(false);
-        vacinas.setBorderPainted(false);
-
-        ActionListener alPessoas = new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                //EXECUTA A TELA DO MENU PESSOA
-            }
-
-        };
-        ActionListener alVacinas = new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                //EXECUTA A TELA DO MENU VACINA
-
-            }
-
-        };
-
-        pessoas.addActionListener(alPessoas);
-        vacinas.addActionListener(alVacinas);
-
-        panel.add(pessoas);
-        panel.add(vacinas);
-        panel.add(title);
+        panel.add(sidebar);
 
         panel.setBackground(new Color(224, 224, 173));
 
         panel.setLayout(null);
         this.add(panel);
+        this.setResizable(false);
         this.setVisible(true);
     }
 
+
     public static void main(final String[] args) {
         new HomeScreen();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
     }
 
 }

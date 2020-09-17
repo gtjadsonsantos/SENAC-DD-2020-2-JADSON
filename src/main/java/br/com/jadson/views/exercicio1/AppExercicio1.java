@@ -17,6 +17,10 @@ import java.awt.event.ActionListener;
 import java.nio.file.*;
 
 public class AppExercicio1 extends JFrame implements ActionListener {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -6982432662948850063L;
 	private JPanel panel;
 	private JTextField jtfWeight;
 	private JTextField jtfHeigth;

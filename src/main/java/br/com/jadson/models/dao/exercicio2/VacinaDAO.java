@@ -6,15 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import br.com.jadson.database.Banco;
 import br.com.jadson.models.vo.exercicio2.VacinaVO;
 
 public class VacinaDAO {
-
-    private DateTimeFormatter dataFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
 
     public int criar(VacinaVO vacinaVO) {
         Connection conn = Banco.getConnection();
