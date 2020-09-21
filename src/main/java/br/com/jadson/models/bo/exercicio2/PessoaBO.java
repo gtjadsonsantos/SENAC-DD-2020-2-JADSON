@@ -77,6 +77,18 @@ public class PessoaBO {
         return resultado;
     }
 
+
+    public ArrayList<PessoaVO> buscarByTipo(PessoaVO pessoa) {
+        PessoaDAO pessoaDAO = new PessoaDAO();
+        ArrayList<PessoaVO> resultado = null;
+
+    
+        resultado = pessoaDAO.buscarByTipo(pessoa);
+      
+
+        return resultado;
+    }    
+
     private boolean validaSexo(PessoaVO pessoa) {
         boolean retorno;
 

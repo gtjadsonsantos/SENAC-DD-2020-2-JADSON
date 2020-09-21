@@ -53,7 +53,7 @@ public class MenuPessoa {
         } catch (Exception e) {
             System.out.println("Digite somente números");
         }
-        teclado.close();
+        
 
         return option;
     }
@@ -70,7 +70,7 @@ public class MenuPessoa {
         System.out.print("Digite o cpf: ");
         String cpf = teclado.nextLine();
         System.out.print("Digite tipo (1|0): ");
-        char tipo = teclado.nextLine().charAt(0);
+        String tipo = teclado.nextLine();
 
         pessoa.setNome(nome);
         pessoa.setSexo(sexo);
@@ -78,7 +78,7 @@ public class MenuPessoa {
         pessoa.setCpf(cpf);
 
         controllerPessoa.cadastrar(pessoa);
-        teclado.close();
+        
 
 
     };
@@ -99,7 +99,7 @@ public class MenuPessoa {
         System.out.print("Digite o cpf: ");
         String cpf = teclado.nextLine();
         System.out.print("Digite tipo (1|0): ");
-        char tipo = teclado.nextLine().charAt(0);
+        String tipo = teclado.nextLine();
 
         pessoa.setId(id);
         pessoa.setNome(nome);
@@ -108,7 +108,7 @@ public class MenuPessoa {
         pessoa.setCpf(cpf);
 
         controllerPessoa.atualizar(pessoa);
-        teclado.close();
+        
 
 
     };
@@ -130,7 +130,7 @@ public class MenuPessoa {
                     + listPessoas.get(i).getTipo());
 
         }
-        teclado.close();
+        
 
 
     };
@@ -147,7 +147,7 @@ public class MenuPessoa {
 
         pessoa.setId(id);
         controllerPessoa.deletar(pessoa);
-        teclado.close();
+        
 
     };
 }

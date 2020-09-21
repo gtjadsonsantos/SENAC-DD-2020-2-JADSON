@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import br.com.jadson.models.bo.exercicio2.VacinaBO;
 
 public class ControllerVacina {
-    public void cadastrar(VacinaVO vacinaVO) {
+    public int cadastrar(VacinaVO vacinaVO) {
         VacinaBO vacinaBO = new VacinaBO();
 
-        vacinaBO.cadastrar(vacinaVO);
+       return  vacinaBO.cadastrar(vacinaVO);
     }
 
     public void deletar(VacinaVO vacinaVO) {

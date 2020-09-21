@@ -6,10 +6,10 @@ import br.com.jadson.models.dao.exercicio2.VacinaDAO;
 import br.com.jadson.models.vo.exercicio2.VacinaVO;
 
 public class VacinaBO {
-    public void cadastrar(VacinaVO VacinaVO) {
+    public int cadastrar(VacinaVO VacinaVO) {
         VacinaDAO vacinaDAO = new VacinaDAO();
 
-        vacinaDAO.criar(VacinaVO);
+        return vacinaDAO.criar(VacinaVO);
 
     }
 

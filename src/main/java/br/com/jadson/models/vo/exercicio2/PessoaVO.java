@@ -48,8 +48,8 @@ public class PessoaVO {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipo(String tipo2) {
+        this.tipo = tipo2;
     }
 
     public String getInstituicao() {

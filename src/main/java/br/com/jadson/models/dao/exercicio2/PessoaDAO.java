@@ -92,7 +92,42 @@ public class PessoaDAO {
                 pessoa.setId(Integer.parseInt(resultado.getString(1)));
                 pessoa.setNome(resultado.getString(2));
                 pessoa.setSexo(resultado.getString(3).charAt(0));
-                pessoa.setTipo(resultado.getString(4).charAt(0));
+                pessoa.setTipo(resultado.getString(4));
+                pessoa.setCpf(resultado.getString(5));
+                pessoa.setInstituicao(resultado.getString(6));
+
+                listaPessoasVO.add(pessoa);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao consultar os usuarios");
+            System.out.println("Erro: " + e.getMessage());
+        } finally {
+            Banco.closeResultSet(resultado);
+            Banco.closePreparedStatement(stmt);
+            Banco.closeConnection(conn);
+        }
+
+        return listaPessoasVO;
+
+    }
+    public ArrayList<PessoaVO> buscarByTipo(PessoaVO pessoaVO) {
+        Connection conn = Banco.getConnection();
+        Statement stmt = Banco.getStatement(conn);
+        ResultSet resultado = null;
+
+        ArrayList<PessoaVO> listaPessoasVO = new ArrayList<PessoaVO>();
+
+        String query = "SELECT PESSOAID, NOME,SEXO,TIPO,CPF,INSTITUICAO FROM PESSOAS WHERE TIPO = '"+ pessoaVO.getTipo() + "'";
+
+        try {
+            resultado = stmt.executeQuery(query);
+            while (resultado.next()) {
+                PessoaVO pessoa = new PessoaVO();
+
+                pessoa.setId(Integer.parseInt(resultado.getString(1)));
+                pessoa.setNome(resultado.getString(2));
+                pessoa.setSexo(resultado.getString(3).charAt(0));
+                pessoa.setTipo(resultado.getString(4));
                 pessoa.setCpf(resultado.getString(5));
                 pessoa.setInstituicao(resultado.getString(6));
 

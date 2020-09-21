@@ -26,4 +26,11 @@ public class ControllerPessoa {
 
         return pessoa.buscar(pessoaVO);
     }
+
+    public ArrayList<PessoaVO> buscarByTipo(PessoaVO pessoaVO) {
+        PessoaBO pessoa = new PessoaBO();
+
+        return pessoa.buscarByTipo(pessoaVO);
+    }
+
 }

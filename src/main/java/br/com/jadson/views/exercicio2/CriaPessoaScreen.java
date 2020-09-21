@@ -62,12 +62,14 @@ public class CriaPessoaScreen extends JFrame implements ActionListener {
         JTcpf = new JTextField(11);
         JTinstituicao = new JTextField(30);
         JTinstituicao.setVisible(false);
-         String country[]={"pesquisador","voluntario"};        
 
-         Comboboxtipo = new JComboBox(country);   
+        String country[] = { "pesquisador", "voluntario" };
 
-         Comboboxtipo.setBounds(150, 210, 200, 30);    
-     
+
+        Comboboxtipo = new JComboBox(country);
+
+        Comboboxtipo.setBounds(150, 210, 200, 30);
+
         JLnome.setBounds(10, 20, 100, 30);
         JLsexo.setBounds(10, 70, 100, 30);
         Jcpf.setBounds(10, 120, 100, 30);
@@ -91,20 +93,17 @@ public class CriaPessoaScreen extends JFrame implements ActionListener {
 
         };
 
-        Alcomboboxtipo= new ActionListener() {
+        Alcomboboxtipo = new ActionListener() {
 
             @Override
             public void actionPerformed(final ActionEvent e) {
 
-                if (Comboboxtipo.getItemAt(Comboboxtipo.getSelectedIndex()).equals("pesquisador")){
+                if (Comboboxtipo.getItemAt(Comboboxtipo.getSelectedIndex()).equals("pesquisador")) {
                     JTinstituicao.setVisible(true);
                 }
             }
 
         };
-
-        
-
 
         cadastrar.addActionListener(Albutton);
         Comboboxtipo.addActionListener(Alcomboboxtipo);
@@ -141,25 +140,22 @@ public class CriaPessoaScreen extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, e.getActionCommand());
 
     }
+
     private void cadastrarPessoa() {
 
         final PessoaVO pessoa = new PessoaVO();
         final ControllerPessoa controllerPessoa = new ControllerPessoa();
 
-
-
         pessoa.setCpf(this.JTcpf.getText());
         pessoa.setInstituicao(this.JTinstituicao.getText());
         pessoa.setSexo(this.JTsexo.getText().charAt(0));
-        pessoa.setTipo(""+ Comboboxtipo.getItemAt(Comboboxtipo.getSelectedIndex()));
+        pessoa.setTipo("" + Comboboxtipo.getItemAt(Comboboxtipo.getSelectedIndex()));
+        pessoa.setNome(JTnome.getText());
 
-        
-
-
-        if( controllerPessoa.cadastrar(pessoa)){
-            JOptionPane.showMessageDialog(null,"Pessoas cadastrar com sucesso");
-        }else {
-            JOptionPane.showMessageDialog(null,"Erro ao cadastrar a pessoa");
+        if (controllerPessoa.cadastrar(pessoa)) {
+            JOptionPane.showMessageDialog(null, "Pessoas cadastrar com sucesso");
+        } else {
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar a pessoa");
         }
 
     }
