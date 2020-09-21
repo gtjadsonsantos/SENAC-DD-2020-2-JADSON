@@ -6,9 +6,9 @@ import br.com.jadson.models.vo.exercicio2.PessoaVO;
 import br.com.jadson.models.bo.exercicio2.PessoaBO;
 
 public class ControllerPessoa {
-    public void cadastrar(PessoaVO pessoaVO) {
+    public boolean cadastrar(PessoaVO pessoaVO) {
         PessoaBO pessoa = new PessoaBO();
-        pessoa.cadastrar(pessoaVO);
+        return pessoa.cadastrar(pessoaVO);
     }
 
     public void deletar(PessoaVO pessoaVO) {

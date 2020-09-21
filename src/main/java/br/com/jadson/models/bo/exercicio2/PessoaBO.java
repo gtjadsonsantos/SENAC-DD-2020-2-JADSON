@@ -2,20 +2,43 @@ package br.com.jadson.models.bo.exercicio2;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import br.com.jadson.models.vo.exercicio2.PessoaVO;
 import br.com.jadson.models.dao.exercicio2.PessoaDAO;
 
 public class PessoaBO {
-    public void cadastrar(PessoaVO pessoa) {
+    public boolean cadastrar(PessoaVO pessoa) {
         PessoaDAO pessoaDAO = new PessoaDAO();
+        boolean response = false;
 
-        if (this.validaSexo(pessoa) && this.validaTipo(pessoa)) {
-            pessoaDAO.criar(pessoa);
+        if (this.validaSexo(pessoa) && this.validarCpf(pessoa)) {
+            if (pessoaDAO.criar(pessoa) == 1) {
+                response = true;
+            }
 
         } else {
-            System.out.println("Dados invalidos, por favor preencha os campos novamente");
+            JOptionPane.showMessageDialog(null,"Dados invalidos, por favor preencha os campos novamente");
+
         }
 
+        return response;
+
+    }
+
+    private boolean validarCpf(PessoaVO pessoa) {
+
+        boolean retorno;
+
+        if (pessoa.getCpf().length() == 11) {
+            retorno = true;
+
+        } else {
+
+            retorno = false;
+        }
+
+        return retorno;
     }
 
     public void deletar(PessoaVO pessoa) {
@@ -69,9 +92,11 @@ public class PessoaBO {
     private boolean validaTipo(PessoaVO pessoa) {
         boolean retorno;
 
-        if (pessoa.getTipo() == '1' || pessoa.getTipo() == '0') {
+        if (pessoa.getTipo() == "pesquisador" || pessoa.getTipo() == "voluntario") {
             retorno = true;
+
         } else {
+
             retorno = false;
         }
 

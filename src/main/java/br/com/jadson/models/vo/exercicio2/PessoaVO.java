@@ -5,7 +5,7 @@ public class PessoaVO {
     private String nome;
     private char sexo;
     private String cpf;
-    private char tipo;
+    private String tipo;
     private String instituicao;
 
     public PessoaVO() {
@@ -44,11 +44,11 @@ public class PessoaVO {
         this.cpf = cpf;
     }
 
-    public char getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(char tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

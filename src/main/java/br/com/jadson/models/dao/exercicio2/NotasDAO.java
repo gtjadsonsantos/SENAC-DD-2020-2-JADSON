@@ -17,16 +17,16 @@ public class NotasDAO {
         Statement stmt = Banco.getStatement(conn);
         int resultado = 0;
 
-        try {
-            resultado = stmt.executeUpdate(query);
-            System.out.println("Sucesso em efetuar o cadastro da notas");
-        } catch (SQLException e) {
-            System.out.println("Erro ao efetuar o cadastro da notas");
-            System.out.println("Erro: " + e.getMessage());
-        } finally {
-            Banco.closePreparedStatement(stmt);
-            Banco.closeConnection(conn);
-        }
+        //try {
+        //    resultado = stmt.executeUpdate(query);
+        //    System.out.println("Sucesso em efetuar o cadastro da notas");
+        //} catch (SQLException e) {
+        //    System.out.println("Erro ao efetuar o cadastro da notas");
+        //    System.out.println("Erro: " + e.getMessage());
+        //} finally {
+        //    Banco.closePreparedStatement(stmt);
+        //    Banco.closeConnection(conn);
+        //}
 
         return resultado;
     }
@@ -60,16 +60,16 @@ public class NotasDAO {
         int resultado = 0;
 
    
-        try {
-            resultado = stmt.executeUpdate(query);
-        } catch (SQLException e) {
-            System.out.println("Erro ao executar o atualizar notas");
-            System.out.println("Erro: " + e.getMessage());
-            e.printStackTrace();
-        } finally {
-            Banco.closePreparedStatement(stmt);
-            Banco.closeConnection(conn);
-        }
+       /// try {
+       ///     resultado = stmt.executeUpdate(query);
+       /// } catch (SQLException e) {
+       ///     System.out.println("Erro ao executar o atualizar notas");
+       ///     System.out.println("Erro: " + e.getMessage());
+       ///     e.printStackTrace();
+       /// } finally {
+       ///     Banco.closePreparedStatement(stmt);
+       ///     Banco.closeConnection(conn);
+       /// }
 
         return resultado;
     }
@@ -81,20 +81,20 @@ public class NotasDAO {
 
         ArrayList<NotasVO> listaPessoasVO = new ArrayList<NotasVO>();
 
-        try {
-            resultado = stmt.executeQuery(query);
-            while (resultado.next()) {
-                
-            }
-        } catch (SQLException e) {
-            System.out.println("Erro ao consultar os notas");
-            System.out.println("Erro: " + e.getMessage());
-        } finally {
-            Banco.closeResultSet(resultado);
-            Banco.closePreparedStatement(stmt);
-            Banco.closeConnection(conn);
-        }
-
+        ///try {
+        ///    resultado = stmt.executeQuery(query);
+        ///    while (resultado.next()) {
+        ///        
+        ///    }
+        ///} catch (SQLException e) {
+        ///    System.out.println("Erro ao consultar os notas");
+        ///    System.out.println("Erro: " + e.getMessage());
+        ///} finally {
+        ///    Banco.closeResultSet(resultado);
+        ///    Banco.closePreparedStatement(stmt);
+        ///    Banco.closeConnection(conn);
+        ///}
+///
         return listaPessoasVO;
 
     }
